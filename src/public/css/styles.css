@@ -1,0 +1,66 @@
+*{box-sizing: border-box;}
+
+.about{ backdrop-filter: blur(6px); }
+
+.actions a, #mb-menu{ transition: scale .3s ease;}
+
+.actions a:active,
+#mb-menu:active { scale: 0.8; }
+
+body{ 
+  background-color: #002642;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+.card-link{ transition: box-shadow, scale .4s ease-in-out;}
+
+.card-link:hover {
+  -webkit-box-shadow: 0px 0px 16px -2px #fefcfd;
+  -moz-box-shadow: 0px 0px 16px -2px #fefcfd;
+  box-shadow: 0px 0px 16px -2px #fefcfd;
+  scale: 1.04;
+}
+
+html{ scroll-behavior: smooth; }
+
+.logo-form iconify-icon{
+  animation: animateLogoForm 5s linear infinite;
+}
+
+.main-container{
+  background-image: url("../assets/jk_bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#mobile-links a{ transition: background-color, color .4s ease-in; }
+
+#mobile-links a:hover{ background-color: #F39237; color: #fefcfd; }
+
+.mobile-menu{ display: none; }
+
+.show{ display: none !important; }
+
+@keyframes animateLogoForm {
+  from{transform: rotateY(0deg);}
+  to{transform: rotateY(360deg);}
+}
+
+@media screen and (max-width: 350px) {
+  .menu{ display: none !important; }
+
+  .mobile-menu{ display:inline-block; }
+
+  .card-link{ word-break: break-all; height: auto !important; }
+}
+
+@media screen and (max-width: 100px){
+  .form-container{ padding: 4px !important;}
+
+  .form-group button { word-break: break-all; }
+
+  .logo-form { display: none; }
+}

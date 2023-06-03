@@ -1,0 +1,26 @@
+{{#if success}}
+  <div id="alert" class="container m-auto py-5">
+    <div
+      class="message-container w-2/4 p-2 bg-[#23CE6B] rounded m-auto flex flex-col md:flex-row items-center justify-between"
+      role="alert"
+    >
+      <div
+        class="message flex flex-col md:flex-row items-center gap-4 pb-7 md:pb-0"
+      >
+        <iconify-icon
+          icon="fluent:alert-on-24-filled"
+          style="color: #002642;"
+          width="35"
+          height="35"
+        ></iconify-icon>
+        <p class="text-center">{{success}}</p>
+      </div>
+      <button id="close-msg"><iconify-icon
+          icon="carbon:close-filled"
+          style="color: #002642;"
+          width="35"
+          height="35"
+        ></iconify-icon></button>
+    </div>
+  </div>
+{{/if}}

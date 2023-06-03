@@ -1,0 +1,57 @@
+<div class="container text-center m-auto h-full px-2 md:px-0">
+  <div class="all-links m-auto py-8">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center"
+    >
+      {{#each rows}}
+        <div
+          class="card-link h-96 bg-[#fefcfd] text-center p-3 rounded flex flex-col justify-center gap-12"
+        >
+          <div
+            class="left-side w-full h-full flex flex-col items-center justify-center p-1"
+          >
+            <a
+              href="{{this.url}}"
+              target="_blank"
+              class="text-[#F39237] font-bold text-3xl pb-3 "
+            >{{this.title}}</a>
+            <p class="w-full min-h-14 overflow-y-scroll pt-2">
+              {{this.description}}
+            </p>
+          </div>
+          <div class="right-side w-full h-full">
+            <div
+              class="actions flex flex-col items-center justify-center gap-3"
+            >
+              <a
+                href="/links/delete/{{this.id}}"
+                class="delete rounded border border-[#F39237] w-full py-2"
+              ><iconify-icon
+                  icon="material-symbols:delete"
+                  style="color: #f39237;"
+                  width="30"
+                  height="30"
+                ></iconify-icon></a>
+              <a
+                href="/links/edit/{{this.id}}"
+                class="edit bg-[#F39237] text-white rounded border w-full py-2"
+              ><iconify-icon
+                  icon="dashicons:edit-page"
+                  style="color: #fefcfd;"
+                  width="30"
+                  height="30"
+                ></iconify-icon></a>
+            </div>
+            <p class="pt-3 text-gray-400">{{timeago this.created_at}}</p>
+          </div>
+
+        </div>
+      {{else}}
+        <div class="container m-auto">
+          <p>There ar not links saved yet</p>
+          <a href="/links/add">Create a new link</a>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

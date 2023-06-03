@@ -1,0 +1,50 @@
+<div class="container h-full mx-auto px-2 py-12">
+  <div
+    class="form-container m-auto p-4 rounded-md bg-[#fefcfd] w-full md:w-4/5 lg:w-2/5 flex flex-col items-center justify-center"
+  >
+    <div class="logo-form pb-3">
+      <iconify-icon
+        icon="mdi:content-save-edit"
+        style="color: #f39237;"
+        width="90"
+        height="100"
+      ></iconify-icon>
+    </div>
+    <form action="/links/edit/{{link.id}}" method="post" class="w-full">
+      <div class="form-group text-center py-3">
+        <input
+          type="text"
+          value="{{link.title}}"
+          name="title"
+          placeholder="title"
+          class="w-4/5 p-2 rounded border"
+          autofocus
+        />
+      </div>
+      <div class="form-group text-center py-3">
+        <input
+          type="url"
+          value="{{link.url}}"
+          name="url"
+          placeholder="url"
+          class="w-4/5 p-2 rounded border"
+        />
+      </div>
+      <div class="form-group text-center py-3">
+        <textarea
+          name="description"
+          rows="2"
+          placeholder="description"
+          class="w-4/5 p-2 rounded border"
+        >
+          {{link.description}}
+        </textarea>
+      </div>
+      <div class="form-group text-center pt-2">
+        <button
+          class="bg-[#F39237] text-white rounded border w-4/5 py-2"
+        >Save</button>
+      </div>
+    </form>
+  </div>
+</div>
