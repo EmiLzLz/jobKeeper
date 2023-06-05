@@ -11,6 +11,11 @@ export const postAddJob = async (req, res) => {
       description,
     };
     await pool.query("INSERT INTO links set ?", [newLink]);
+    /* `req.flash("success", "Link saved successfully");` is adding a flash message to the `req` object
+    with the key "success" and the value "Link saved successfully". Flash messages are used to
+    display a message to the user after a certain action has been performed, such as adding or
+    editing a link in this case. The message will be displayed on the next page that the user
+    visits. */
     req.flash("success", "Link saved successfully");
     res.redirect("/links");
   } 

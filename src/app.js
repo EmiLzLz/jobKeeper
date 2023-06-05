@@ -31,7 +31,9 @@ app.engine(
 app.set("view engine", ".hbs");
 
 //*middlewares
-/* These lines of code are setting up middleware functions for the Express application. */
+/* `app.use(session({...}))` is setting up a middleware function for the Express application that
+enables session management. The `session` function takes an object with configuration options as its
+argument. */
 app.use(session({
   secret: "mysecret",
   resave: false,
